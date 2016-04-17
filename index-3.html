@@ -1,0 +1,1786 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="shortcut icon" href="tubiao2.ico">
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz|Droid+Sans|Princess+Sofia' rel='stylesheet' type='text/css' />
+	<link rel="stylesheet" type="text/css" media="all" href="inland-hembygd.css" />
+	<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery.nivo.slider.js"></script>
+	<script type="text/javascript" src="js/jquery-2.1.0.min.js"></script>
+	<script type="text/javascript" src="js/easyform.js"></script>
+	<title>住户专用</title>
+	<script type="text/javascript" src="js/laydate.js"></script>
+
+	<style type="text/css">
+		*{margin:0;padding:0;list-style:none;}
+		html{background-color:#E3E3E3; font-size:14px; color:#000; font-family:'微软雅黑'}
+		h2{line-height:30px; font-size:20px;}
+		a,a:hover{ text-decoration:none;}
+		pre{font-family:'微软雅黑'}
+		.box{width:970px; padding:10px 20px; background-color:#fff; margin:10px auto;}
+		.box a{padding-right:20px;}
+		.demo1,.demo2,.demo3,.demo4,.demo5,.demo6{margin:25px 0;}
+		h3{margin:10px 0;}
+		.layinput{height: 22px;line-height: 22px;width: 150px;margin: 0;}
+	</style>
+	<style>
+		form{
+			border: 1px solid green;
+			margin-left:50px;
+			margin-right:50px;
+		}
+	</style>
+</head>
+
+<body onload="loadpopup()" background="background-4.jpg">
+<script type="text/javascript" >
+	.ziti{font-size: 200%;
+		font-color:black;
+	}
+	function openwin() {
+		window.open("fillAttention.html", "newwindow", "height=300, width=500,top=200,left=400,toolbar=no, menubar=no, scrollbars=yes, resizable=no, location=no, status=no")
+	}
+	function get_cookie(Name)
+	{var search = Name + "="
+		var returnvalue = "";
+		if (document.cookie.length > 0) {
+			offset = document.cookie.indexOf(search)
+			if (offset != -1) {
+				offset += search.length
+				end = document.cookie.indexOf(";", offset);
+				if (end == -1)
+					end = document.cookie.length;
+				returnvalue=unescape(document.cookie.substring(offset,end))
+			}
+		}
+		return returnvalue;
+	}
+	function loadpopup(){
+		if (get_cookie('popped')==''){
+			openwin()
+			document.cookie="popped=yes"
+		}
+	}
+
+</script>
+<script>
+	function check()
+	{
+		alert("感谢您参与填写个人资料!");
+	}
+</script>
+<script>
+	var x=1;
+	function myFunction()
+	{   x=x+1;
+		switch (x)
+		{
+			case 2:
+				document.getElementById('2').style.display='block';
+				break;
+			case 3:
+				document.getElementById('3').style.display='block';
+				break;
+			case 4:
+				document.getElementById('4').style.display='block';
+				break;
+			case 5:
+				document.getElementById('5').style.display='block';
+				break;
+			case 6:
+				document.getElementById('6').style.display='block';
+				break;
+			default:
+				alert("其他家人相关信息请自行填写并上传。")
+		}
+	}
+</script>
+<script>
+	var y=21;
+	function my()
+	{   y=y+1;
+		switch (y)
+		{
+			case 22:
+				document.getElementById('22').style.display='block';
+				break;
+			case 23:
+				document.getElementById('23').style.display='block';
+				break;
+			case 24:
+				document.getElementById('24').style.display='block';
+				break;
+			case 25:
+				document.getElementById('25').style.display='block';
+				break;
+			case 26:
+				document.getElementById('26').style.display='block';
+				break;
+			case 27:
+				document.getElementById('27').style.display='block';
+				break;
+			case 28:
+				document.getElementById('28').style.display='block';
+				break;
+			default:
+				alert("其他出行记录请自行填写并上传。")
+		}
+	}
+</script>
+<script type="text/javascript">
+	function checkna(){
+		na=form1.yourname.value;
+		if( na.length <1 )
+		{
+			divname.innerHTML='<font class="color1"style="color:red;">*&nbsp;姓名不能为空</font>';
+
+		}else{
+			divname.innerHTML='<font class="color2"style="color:green;">*&nbsp;输入正确</font>';
+
+		}
+
+	}
+	function checkwo() {
+		wo = form1.workname.value;
+		if (wo.length < 1) {
+			divwo.innerHTML = '<font class="color1" style="color:red;">*&nbsp;工作单位不能为空</font>';
+
+		} else {
+			divwo.innerHTML = '<font class="color2"style="color:green;">*&nbsp;输入正确</font>';
+		}
+	}
+		function checkfa1(){
+			qu1=form1.qu1.value;
+			jie1=form1.jie1.value;
+			if( qu1.length <1 )
+			{
+				divfa.innerHTML='<font class="color1" style="color:red;">*&nbsp;地址区不能为空</font>';
+			}
+		   if( qu1.length >=1 && jie1.length>=1)
+		   {
+			   divfa.innerHTML='<font class="color2"style="color:green;">*&nbsp;输入正确</font>';
+		   }
+		}
+	function checkfa2(){
+		qu1=form1.qu1.value;
+		jie1=form1.jie1.value;
+		if( jie1.length <1 )
+		{
+			divfa.innerHTML='<font class="color2"style="color:red;">*&nbsp;地址街（镇）不能为空</font>';
+		}
+		if( qu1.length >=1&&jie1.length >=1)
+		{
+			divfa.innerHTML='<font class="color2"style="color:green;">*&nbsp;输入正确</font>';
+		}
+	}
+	function checkdo1(){
+		qu2=form1.qu2.value;
+		jie2=form1.jie2.value;
+		if( qu2.length <1 )
+		{
+			divdo.innerHTML='<font class="color1" style="color:red;">*&nbsp;地址区不能为空</font>';
+		}
+		if( qu2.length >=1 && jie2.length>=1)
+		{
+			divdo.innerHTML='<font class="color2"style="color:green;">*&nbsp;输入正确</font>';
+		}
+	}
+	function checkdo2(){
+		qu2=form1.qu2.value;
+		jie2=form1.jie2.value;
+		if( jie2.length <1 )
+		{
+			divdo.innerHTML='<font class="color1" style="color:red;">*&nbsp;地址街（镇）不能为空</font>';
+		}
+		if( qu2.length >=1 && jie2.length>=1)
+		{
+			divdo.innerHTML='<font class="color2"style="color:green;">*&nbsp;输入正确</font>';
+		}
+	}
+	function checkag(){
+		age=form1.agee.value;
+		 if( age<0)
+		{
+			divag.innerHTML='<font class="color2"style="color:red;">*&nbsp;年龄填写不合法</font>';
+		}
+		else if(age<6)
+		{
+			divag.innerHTML='<font class="color2"style="color:red;">*&nbsp;6岁以下儿童禁止填写</font>';
+		}
+		else if(age<130)
+		{
+			divag.innerHTML='<font class="color2"style="color:green;">*&nbsp;输入正确</font>';
+		}
+		else
+		{
+			divag.innerHTML='<font class="color2"style="color:red;">*&nbsp;年龄填写不合法</font>';
+		}
+	}
+	function checkcr1(){
+		sum=form1.sum.value;
+		notf=form1.notf.value;
+		if( sum.length <1 )
+		{
+			divcr.innerHTML='<font class="color1" style="color:red;">*&nbsp;本户户籍登记人口总数不能为空</font>';
+		}
+		if( notf.length <1 )
+		{
+			divcr.innerHTML='<font class="color2"style="color:red;">*&nbsp;不满六周岁人数不能为空</font>';
+		}
+		if( (sum.length >=1) && (notf.length>=1))
+		{
+			divcr.innerHTML='<font class="color2"style="color:green;">*&nbsp;输入正确</font>';
+		}
+	}
+	function checkcr2(){
+		sum=form1.sum.value;
+		notf=form1.notf.value;
+		if( sum.length <1 )
+		{
+			divcr.innerHTML='<font class="color2"style="color:red;">*&nbsp;本户户籍登记人口总数不能为空</font>';
+		}
+		if( notf.length <1 )
+		{
+			divcr.innerHTML='<font class="color1" style="color:red;">*&nbsp;不满六周岁人数不能为空</font>';
+		}
+		if( (sum.length >=1)&& (notf.length>=1))
+		{
+			divcr.innerHTML='<font class="color2"style="color:green;">*&nbsp;输入正确</font>';
+		}
+		if(sum < notf)
+		{
+			divcr.innerHTML='<font class="color2"style="color:red;">*&nbsp;输入错误</font>';
+		}
+	}
+	function checkli1(){
+		su=form1.su.value;
+		notl=form1.notl.value;
+		if( sum.length <1 )
+		{
+			divli.innerHTML='<font class="color1" style="color:red;">*&nbsp;实际居住人口总数不能为空</font>';
+		}
+		if( notl.length <1 )
+		{
+			divli.innerHTML='<font class="color2"style="color:red;">*&nbsp;不满六周岁人数不能为空</font>';
+		}
+		if( (su.length >=1) && (notl.length>=1))
+		{
+			divli.innerHTML='<font class="color2"style="color:green;">*&nbsp;输入正确</font>';
+		}
+	}
+	function checkli2(){
+		su=form1.su.value;
+		notl=form1.notl.value;
+		if( su.length <1 )
+		{
+			divli.innerHTML='<font class="color2"style="color:red;">*&nbsp;实际居住人口总数不能为空</font>';
+		}
+		if( notl.length <1 )
+		{
+			divli.innerHTML='<font class="color1" style="color:red;">*&nbsp;不满六周岁人数不能为空</font>';
+		}
+		if( (su.length >=1)&& (notl.length>=1))
+		{
+			divli.innerHTML='<font class="color2"style="color:green;">*&nbsp;输入正确</font>';
+		}
+		if(su < notl)
+		{
+			divli.innerHTML='<font class="color2"style="color:red;">*&nbsp;输入错误</font>';
+		}
+	}
+	function checkun1(){
+		unit1=form1.unit1.value;
+		relation1=form1.relation1.value;
+		if( unit1.length <1 )
+		{
+			divun1.innerHTML='<font class="color1" style="color:red;">*&nbsp;家庭成员姓名不能为空</font>';
+		}
+		if( relation1.length <1 )
+		{
+			divun1.innerHTML='<font class="color2"style="color:red;">*&nbsp;家庭成员关系不能为空</font>';
+		}
+		if( (unit1.length >=1) && (relation1.length>=1))
+		{
+			divun1.innerHTML='<font class="color2"style="color:green;">*&nbsp;输入正确</font>';
+		}
+	}
+	function checkun11(){
+		unit1=form1.unit1.value;
+		relation1=form1.relation1.value;
+		if( relation1.length <1 )
+		{
+			divun1.innerHTML='<font class="color2"style="color:red;">*&nbsp;家庭成员关系不能为空</font>';
+		}
+		if( unit1.length <1 )
+		{
+			divun1.innerHTML='<font class="color1" style="color:red;">*&nbsp;家庭成员姓名不能为空</font>';
+		}
+		if( (unit1.length >=1)&& (relation1.length>=1))
+		{
+			divun1.innerHTML='<font class="color2"style="color:green;">*&nbsp;输入正确</font>';
+		}
+	}
+	function checkun2(){
+		unit2=form1.unit2.value;
+		relation2=form1.relation2.value;
+		if( unit2.length <1 )
+		{
+			divun2.innerHTML='<font class="color1" style="color:red;">*&nbsp;家庭成员姓名不能为空</font>';
+		}
+		if( relation2.length <1 )
+		{
+			divun2.innerHTML='<font class="color2"style="color:red;">*&nbsp;家庭成员关系不能为空</font>';
+		}
+		if(( unit2.length >=1) && (relation2.length>=1))
+		{
+			divun2.innerHTML='<font class="color2"style="color:green;">*&nbsp;输入正确</font>';
+		}
+	}
+	function checkun21(){
+		unit2=form1.unit2.value;
+		relation2=form1.relation2.value;
+		if( relation2.length <1 )
+		{
+			divun2.innerHTML='<font class="color2"style="color:red;">*&nbsp;家庭成员关系不能为空</font>';
+		}
+		if( unit2.length <1 )
+		{
+			divun2.innerHTML='<font class="color1" style="color:red;">*&nbsp;家庭成员姓名不能为空</font>';
+		}
+		if( (unit2.length >=1)&&(relation2.length>=1))
+		{
+			divun2.innerHTML='<font class="color2"style="color:green;">*&nbsp;输入正确</font>';
+		}
+	}
+	function checkun3(){
+		unit3=form1.unit3.value;
+		relation3=form1.relation3.value;
+		if( unit3.length <1 )
+		{
+			divun3.innerHTML='<font class="color1" style="color:red;">*&nbsp;家庭成员姓名不能为空</font>';
+		}
+		if( relation3.length <1 )
+		{
+			divun3.innerHTML='<font class="color2"style="color:red;">*&nbsp;家庭成员关系不能为空</font>';
+		}
+		if( (unit3.length >=1) && (relation3.length>=1))
+		{
+			divun3.innerHTML='<font class="color2"style="color:green;">*&nbsp;输入正确</font>';
+		}
+	}
+	function checkun31(){
+		unit3=form1.unit3.value;
+		relation3=form1.relation3.value;
+		if( relation3.length <1 )
+		{
+			divun3.innerHTML='<font class="color2"style="color:red;">*&nbsp;家庭成员关系不能为空</font>';
+		}
+		if( unit3.length <1 )
+		{
+			divun3.innerHTML='<font class="color1" style="color:red;">*&nbsp;家庭成员姓名不能为空</font>';
+		}
+		if( (unit3.length >=1)&&( relation3.length>=1))
+		{
+			divun3.innerHTML='<font class="color2"style="color:green;">*&nbsp;输入正确</font>';
+		}
+	}
+	function checkun4(){
+		unit4=form1.unit4.value;
+		relation4=form1.relation4.value;
+		if( unit4.length <1 )
+		{
+			divun4.innerHTML='<font class="color1" style="color:red;">*&nbsp;家庭成员姓名不能为空</font>';
+		}
+		if( relation4.length <1 )
+		{
+			divun4.innerHTML='<font class="color2"style="color:red;">*&nbsp;家庭成员关系不能为空</font>';
+		}
+		if( (unit4.length >=1 )&&( relation4.length>=1))
+		{
+			divun4.innerHTML='<font class="color2"style="color:green;">*&nbsp;输入正确</font>';
+		}
+	}
+	function checkun41(){
+		unit4=form1.unit4.value;
+		relation4=form1.relation4.value;
+		if( relation4.length <1 )
+		{
+			divun4.innerHTML='<font class="color2"style="color:red;">*&nbsp;家庭成员关系不能为空</font>';
+		}
+		if( unit4.length <1 )
+		{
+			divun4.innerHTML='<font class="color1" style="color:red;">*&nbsp;家庭成员姓名不能为空</font>';
+		}
+		if( (unit4.length >=1)&& (relation4.length>=1))
+		{
+			divun4.innerHTML='<font class="color2"style="color:green;">*&nbsp;输入正确</font>';
+		}
+	}
+	function checkun5(){
+		unit5=form5.unit5.value;
+		relation5=form1.relation5.value;
+		if( unit5.length <1 )
+		{
+			divun5.innerHTML='<font class="color1" style="color:red;">*&nbsp;家庭成员姓名不能为空</font>';
+		}
+		if(( unit5.length >=1 )&& (relation5>=1))
+		{
+			divun5.innerHTML='<font class="color2"style="color:green;">*&nbsp;输入正确</font>';
+		}
+	}
+	function checkun51(){
+		unit5=form1.unit5.value;
+		relation5=form1.relation5.value;
+		if( relation5.length <1 )
+		{
+			divun5.innerHTML='<font class="color2"style="color:red;">*&nbsp;家庭成员关系不能为空</font>';
+		}
+		if(( unit5.length >=1)&& (relation5.length>=1))
+		{
+			divun5.innerHTML='<font class="color2"style="color:green;">*&nbsp;输入正确</font>';
+		}
+	}
+	function checkun6(){
+		unit6=form1.unit6.value;
+		relation6=form1.relation6.value;
+		if( unit6.length <1 )
+		{
+			divun6.innerHTML='<font class="color1" style="color:red;">*&nbsp;家庭成员姓名不能为空</font>';
+		}
+		if( (unit6.length >=1) && (relation6>=1))
+		{
+			divun6.innerHTML='<font class="color2"style="color:green;">*&nbsp;输入正确</font>';
+		}
+	}
+	function checkun61(){
+		unit6=form1.unit6.value;
+		relation6=form1.relation6.value;
+		if( relation6.length <1 )
+		{
+			divun6.innerHTML='<font class="color2"style="color:red;">*&nbsp;家庭成员关系不能为空</font>';
+		}
+		if( (unit6.length >=1)&& (relation6.length>=1))
+		{
+			divun6.innerHTML='<font class="color2"style="color:green;">*&nbsp;输入正确</font>';
+		}
+	}
+	function checkvi11(){
+		goal1=form1.goal1.value.length;
+		way1=form1.way1.value.length;
+		stop1=form1.stop1.value.length;
+		if( (way1 <1)&& (stop1 <1))
+		{
+			divvi1.innerHTML='<font class="color1" style="color:red;">*&nbsp;交通方式和停车方式不能为空</font>';
+		}
+		if(goal1<1)
+		{
+			divvi1.innerHTML='<font class="color1" style="color:red;">*&nbsp;出行目的不能为空</font>';
+		}
+		if( (way1 >=1)&& (stop1 >=1)&&(goal1 >=1))
+		{
+			divvi1.innerHTML='<font class="color2"style="color:green;">*&nbsp;输入正确</font>';
+		}
+	}
+	function checkvi12(){
+		goal1=form1.goal1.value.length;
+		way1=form1.way1.value.length;
+		stop1=form1.stop1.value.length;
+		if(way1 <1)
+		{
+			divvi1.innerHTML='<font class="color1" style="color:red;">*&nbsp;交通方式不能为空</font>';
+		}
+		if(goal1 <1)
+		{
+			divvi1.innerHTML='<font class="color1" style="color:red;">*&nbsp;出行目的不能为空</font>';
+		}
+		if( (way1 >=1)&& (stop1 >=1)&&(goal1 >=1))
+		{
+			divvi1.innerHTML='<font class="color2"style="color:green;">*&nbsp;输入正确</font>';
+		}
+	}
+	function checkvi13(){
+		goal1=form1.goal1.value.length;
+		way1=form1.way1.value.length;
+		stop1=form1.stop1.value.length;
+		if(stop1<1)
+		{
+			divvi1.innerHTML='<font class="color1" style="color:red;">*&nbsp;停车方式不能为空</font>';
+		}
+		if(way1 <1)
+		{
+			divvi1.innerHTML='<font class="color1" style="color:red;">*&nbsp;交通方式不能为空</font>';
+		}
+		if(goal1 <1)
+		{
+			divvi1.innerHTML='<font class="color1" style="color:red;">*&nbsp;出行目的不能为空</font>';
+		}
+		if( (way1 >=1)&& (stop1 >=1)&&(goal1 >=1))
+		{
+			divvi1.innerHTML='<font class="color2"style="color:green;">*&nbsp;输入正确</font>';
+		}
+	}
+	function checkvi21(){
+		goal2=form1.goal2.value.length;
+		way2=form1.way2.value.length;
+		stop2=form1.stop2.value.length;
+		if( (way2 <1)&& (stop2 <1))
+		{
+			divvi2.innerHTML='<font class="color1" style="color:red;">*&nbsp;交通方式和停车方式不能为空</font>';
+		}
+		if(goal2<1)
+		{
+			divvi2.innerHTML='<font class="color1" style="color:red;">*&nbsp;出行目的不能为空</font>';
+		}
+		if( (way2 >=1)&& (stop2 >=1)&&(goal2 >=1))
+		{
+			divvi2.innerHTML='<font class="color2"style="color:green;">*&nbsp;输入正确</font>';
+		}
+	}
+	function checkvi22(){
+		goal2=form1.goal2.value.length;
+		way2=form1.way2.value.length;
+		stop2=form1.stop2.value.length;
+		if(way2 <1)
+		{
+			divvi2.innerHTML='<font class="color1" style="color:red;">*&nbsp;交通方式不能为空</font>';
+		}
+		if(goal2 <1)
+		{
+			divvi2.innerHTML='<font class="color1" style="color:red;">*&nbsp;出行目的不能为空</font>';
+		}
+		if( (way2 >=1)&& (stop2 >=1)&&(goal2 >=1))
+		{
+			divvi2.innerHTML='<font class="color2"style="color:green;">*&nbsp;输入正确</font>';
+		}
+	}
+	function checkvi23(){
+		goal2=form1.goal2.value.length;
+		way2=form1.way2.value.length;
+		stop2=form1.stop2.value.length;
+		if(stop2<1)
+		{
+			divvi2.innerHTML='<font class="color1" style="color:red;">*&nbsp;停车方式不能为空</font>';
+		}
+		if(way2 <1)
+		{
+			divvi2.innerHTML='<font class="color1" style="color:red;">*&nbsp;交通方式不能为空</font>';
+		}
+		if(goal2 <1)
+		{
+			divvi2.innerHTML='<font class="color1" style="color:red;">*&nbsp;出行目的不能为空</font>';
+		}
+		if( (way2 >=1)&& (stop2 >=1)&&(goal2 >=1))
+		{
+			divvi2.innerHTML='<font class="color2"style="color:green;">*&nbsp;输入正确</font>';
+		}
+	}
+	function checkvi31(){
+		goal3=form1.goal3.value.length;
+		way3=form1.way3.value.length;
+		stop3=form1.stop3.value.length;
+		if( (way3 <1)&& (stop3 <1))
+		{
+			divvi3.innerHTML='<font class="color1" style="color:red;">*&nbsp;交通方式和停车方式不能为空</font>';
+		}
+		if(goal3<1)
+		{
+			divvi3.innerHTML='<font class="color1" style="color:red;">*&nbsp;出行目的不能为空</font>';
+		}
+		if( (way3 >=1)&& (stop3 >=1)&&(goal3 >=1))
+		{
+			divvi3.innerHTML='<font class="color2"style="color:green;">*&nbsp;输入正确</font>';
+		}
+	}
+	function checkvi32(){
+		goal3=form1.goal3.value.length;
+		way3=form1.way3.value.length;
+		stop3=form1.stop3.value.length;
+		if(way3 <1)
+		{
+			divvi3.innerHTML='<font class="color1" style="color:red;">*&nbsp;交通方式不能为空</font>';
+		}
+		if(goal3 <1)
+		{
+			divvi3.innerHTML='<font class="color1" style="color:red;">*&nbsp;出行目的不能为空</font>';
+		}
+		if( (way3 >=1)&& (stop3 >=1)&&(goal3 >=1))
+		{
+			divvi3.innerHTML='<font class="color2"style="color:green;">*&nbsp;输入正确</font>';
+		}
+	}
+	function checkvi33(){
+		goal3=form1.goal3.value.length;
+		way3=form1.way3.value.length;
+		stop3=form1.stop3.value.length;
+		if(stop3<1)
+		{
+			divvi3.innerHTML='<font class="color1" style="color:red;">*&nbsp;停车方式不能为空</font>';
+		}
+		if(way3 <1)
+		{
+			divvi3.innerHTML='<font class="color1" style="color:red;">*&nbsp;交通方式不能为空</font>';
+		}
+		if(goal3 <1)
+		{
+			divvi3.innerHTML='<font class="color1" style="color:red;">*&nbsp;出行目的不能为空</font>';
+		}
+		if( (way3 >=1)&& (stop3 >=1)&&(goal3 >=1))
+		{
+			divvi3.innerHTML='<font class="color2"style="color:green;">*&nbsp;输入正确</font>';
+		}
+	}
+	function checkvi41(){
+		goal4=form1.goal4.value.length;
+		way4=form1.way4.value.length;
+		stop4=form1.stop4.value.length;
+		if( (way4 <1)&& (stop4 <1))
+		{
+			divvi4.innerHTML='<font class="color1" style="color:red;">*&nbsp;交通方式和停车方式不能为空</font>';
+		}
+		if(goal4 <1)
+		{
+			divvi4.innerHTML='<font class="color1" style="color:red;">*&nbsp;出行目的不能为空</font>';
+		}
+		if( (way4 >=1)&& (stop4 >=1)&&(goal4 >=1))
+		{
+			divvi4.innerHTML='<font class="color2"style="color:green;">*&nbsp;输入正确</font>';
+		}
+	}
+	function checkvi42(){
+		goal4=form1.goal4.value.length;
+		way4=form1.way4.value.length;
+		stop4=form1.stop4.value.length;
+		if(way4 <1)
+		{
+			divvi4.innerHTML='<font class="color1" style="color:red;">*&nbsp;交通方式不能为空</font>';
+		}
+		if(goal4 <1)
+		{
+			divvi4.innerHTML='<font class="color1" style="color:red;">*&nbsp;出行目的不能为空</font>';
+		}
+		if( (way4 >=1)&& (stop4 >=1)&&(goal4 >=1))
+		{
+			divvi4.innerHTML='<font class="color2"style="color:green;">*&nbsp;输入正确</font>';
+		}
+	}
+	function checkvi43(){
+		goal4=form1.goal4.value.length;
+		way4=form1.way4.value.length;
+		stop4=form1.stop4.value.length;
+		if(stop4<1)
+		{
+			divvi4.innerHTML='<font class="color1" style="color:red;">*&nbsp;停车方式不能为空</font>';
+		}
+		if(way4 <1)
+		{
+			divvi4.innerHTML='<font class="color1" style="color:red;">*&nbsp;交通方式不能为空</font>';
+		}
+		if(goal4 <1)
+		{
+			divvi4.innerHTML='<font class="color1" style="color:red;">*&nbsp;出行目的不能为空</font>';
+		}
+		if( (way4 >=1)&& (stop4 >=1)&&(goal4 >=1))
+		{
+			divvi4.innerHTML='<font class="color2"style="color:green;">*&nbsp;输入正确</font>';
+		}
+	}
+	function checkvi51(){
+		goal5=form1.goal5.value.length;
+		way5=form1.way5.value.length;
+		stop5=form1.stop5.value.length;
+		if( (way5 <1)&& (stop5 <1))
+		{
+			divvi5.innerHTML='<font class="color1" style="color:red;">*&nbsp;交通方式和停车方式不能为空</font>';
+		}
+		if(goal5 <1)
+		{
+			divvi5.innerHTML='<font class="color1" style="color:red;">*&nbsp;出行目的不能为空</font>';
+		}
+		if( (way5 >=1)&& (stop5 >=1)&&(goal5 >=1))
+		{
+			divvi5.innerHTML='<font class="color2"style="color:green;">*&nbsp;输入正确</font>';
+		}
+	}
+	function checkvi52(){
+		goal5=form1.goal5.value.length;
+		way5=form1.way5.value.length;
+		stop5=form1.stop5.value.length;
+		if(way5 <1)
+		{
+			divvi5.innerHTML='<font class="color1" style="color:red;">*&nbsp;交通方式不能为空</font>';
+		}
+		if(goal5 <1)
+		{
+			divvi5.innerHTML='<font class="color1" style="color:red;">*&nbsp;出行目的不能为空</font>';
+		}
+		if( (way5 >=1)&& (stop5 >=1)&&(goal5 >=1))
+		{
+			divvi5.innerHTML='<font class="color2"style="color:green;">*&nbsp;输入正确</font>';
+		}
+	}
+	function checkvi53(){
+		goal5=form1.goal5.value.length;
+		way5=form1.way5.value.length;
+		stop5=form1.stop5.value.length;
+		if(stop5 <1)
+		{
+			divvi5.innerHTML='<font class="color1" style="color:red;">*&nbsp;停车方式不能为空</font>';
+		}
+		if(way5 <1)
+		{
+			divvi5.innerHTML='<font class="color1" style="color:red;">*&nbsp;交通方式不能为空</font>';
+		}
+		if(goal5 <1)
+		{
+			divvi5.innerHTML='<font class="color1" style="color:red;">*&nbsp;出行目的不能为空</font>';
+		}
+		if( (way5 >=1)&& (stop5 >=1)&&(goal5 >=1))
+		{
+			divvi5.innerHTML='<font class="color2"style="color:green;">*&nbsp;输入正确</font>';
+		}
+	}
+	function checkvi61(){
+		goal6=form1.goal6.value.length;
+		way6=form1.way6.value.length;
+		stop6=form1.stop6.value.length;
+		if( (way6 <1)&& (stop6 <1))
+		{
+			divvi6.innerHTML='<font class="color1" style="color:red;">*&nbsp;交通方式和停车方式不能为空</font>';
+		}
+		if(goal6 <1)
+		{
+			divvi6.innerHTML='<font class="color1" style="color:red;">*&nbsp;出行目的不能为空</font>';
+		}
+		if( (way6 >=1)&& (stop6 >=1)&&(goal6 >=1))
+		{
+			divvi6.innerHTML='<font class="color2"style="color:green;">*&nbsp;输入正确</font>';
+		}
+	}
+	function checkvi62(){
+		goal6=form1.goal6.value.length;
+		way6=form1.way6.value.length;
+		stop6=form1.stop6.value.length;
+		if(way6 <1)
+		{
+			divvi6.innerHTML='<font class="color1" style="color:red;">*&nbsp;交通方式不能为空</font>';
+		}
+		if(goal6 <1)
+		{
+			divvi6.innerHTML='<font class="color1" style="color:red;">*&nbsp;出行目的不能为空</font>';
+		}
+		if( (way6 >=1)&& (stop6 >=1)&&(goal6 >=1))
+		{
+			divvi6.innerHTML='<font class="color2"style="color:green;">*&nbsp;输入正确</font>';
+		}
+	}
+	function checkvi63(){
+		goal6=form1.goal6.value.length;
+		way6=form1.way6.value.length;
+		stop6=form1.stop6.value.length;
+		if(stop6<1)
+		{
+			divvi6.innerHTML='<font class="color1" style="color:red;">*&nbsp;停车方式不能为空</font>';
+		}
+		if(way6 <1)
+		{
+			divvi6.innerHTML='<font class="color1" style="color:red;">*&nbsp;交通方式不能为空</font>';
+		}
+		if(goal6 <1)
+		{
+			divvi6.innerHTML='<font class="color1" style="color:red;">*&nbsp;出行目的不能为空</font>';
+		}
+		if( (way6 >=1)&& (stop6 >=1)&&(goal6 >=1))
+		{
+			divvi6.innerHTML='<font class="color2"style="color:green;">*&nbsp;输入正确</font>';
+		}
+	}
+	function checkvi71(){
+		goal7=form1.goal7.value.length;
+		way7=form1.way7.value.length;
+		stop7=form1.stop7.value.length;
+		if( (way7 <1)&& (stop7 <1))
+		{
+			divvi7.innerHTML='<font class="color1" style="color:red;">*&nbsp;交通方式和停车方式不能为空</font>';
+		}
+		if(goal7 <1)
+		{
+			divvi7.innerHTML='<font class="color1" style="color:red;">*&nbsp;出行目的不能为空</font>';
+		}
+		if( (way7 >=1)&& (stop7 >=1)&&(goal7 >=1))
+		{
+			divvi7.innerHTML='<font class="color2"style="color:green;">*&nbsp;输入正确</font>';
+		}
+	}
+	function checkvi72(){
+		goal7=form1.goal7.value.length;
+		way7=form1.way7.value.length;
+		stop7=form1.stop7.value.length;
+		if(way7 <1)
+		{
+			divvi7.innerHTML='<font class="color1" style="color:red;">*&nbsp;交通方式不能为空</font>';
+		}
+		if(goal7 <1)
+		{
+			divvi7.innerHTML='<font class="color1" style="color:red;">*&nbsp;出行目的不能为空</font>';
+		}
+		if( (way7 >=1)&& (stop7 >=1)&&(goal7 >=1))
+		{
+			divvi7.innerHTML='<font class="color2"style="color:green;">*&nbsp;输入正确</font>';
+		}
+	}
+	function checkvi73(){
+		goal7=form1.goal7.value.length;
+		way7=form1.way7.value.length;
+		stop7=form1.stop7.value.length;
+		if(stop7<1)
+		{
+			divvi7.innerHTML='<font class="color1" style="color:red;">*&nbsp;停车方式不能为空</font>';
+		}
+		if(way7 <1)
+		{
+			divvi7.innerHTML='<font class="color1" style="color:red;">*&nbsp;交通方式不能为空</font>';
+		}
+		if(goal7 <1)
+		{
+			divvi7.innerHTML='<font class="color1" style="color:red;">*&nbsp;出行目的不能为空</font>';
+		}
+		if( (way7 >=1)&& (stop7 >=1)&&(goal7 >=1))
+		{
+			divvi7.innerHTML='<font class="color2"style="color:green;">*&nbsp;输入正确</font>';
+		}
+	}
+	function checkvi81(){
+		goal8=form1.goal8.value.length;
+		way8=form1.way8.value.length;
+		stop8=form1.stop8.value.length;
+		if( (way8 <1)&& (stop8 <1))
+		{
+			divvi8.innerHTML='<font class="color1" style="color:red;">*&nbsp;交通方式和停车方式不能为空</font>';
+		}
+		if(goal8 <1)
+		{
+			divvi8.innerHTML='<font class="color1" style="color:red;">*&nbsp;出行目的不能为空</font>';
+		}
+		if( (way8 >=1)&& (stop8 >=1)&&(goal8 >=1))
+		{
+			divvi8.innerHTML='<font class="color2"style="color:green;">*&nbsp;输入正确</font>';
+		}
+	}
+	function checkvi82(){
+		goal8=form1.goal8.value.length;
+		way8=form1.way8.value.length;
+		stop8=form1.stop8.value.length;
+		if(way8 <1)
+		{
+			divvi8.innerHTML='<font class="color1" style="color:red;">*&nbsp;交通方式不能为空</font>';
+		}
+		if(goal8 <1)
+		{
+			divvi8.innerHTML='<font class="color1" style="color:red;">*&nbsp;出行目的不能为空</font>';
+		}
+		if( (way8 >=1)&& (stop8 >=1)&&(goal8 >=1))
+		{
+			divvi8.innerHTML='<font class="color2"style="color:green;">*&nbsp;输入正确</font>';
+		}
+	}
+	function checkvi83(){
+		goal8=form1.goal8.value.length;
+		way8=form1.way8.value.length;
+		stop8=form1.stop8.value.length;
+		if(stop8<1)
+		{
+			divvi8.innerHTML='<font class="color1" style="color:red;">*&nbsp;停车方式不能为空</font>';
+		}
+		if(way8 <1)
+		{
+			divvi8.innerHTML='<font class="color1" style="color:red;">*&nbsp;交通方式不能为空</font>';
+		}
+		if(goal8 <1)
+		{
+			divvi8.innerHTML='<font class="color1" style="color:red;">*&nbsp;出行目的不能为空</font>';
+		}
+		if( (way8 >=1)&& (stop8 >=1)&&(goal8 >=1))
+		{
+			divvi8.innerHTML='<font class="color2"style="color:green;">*&nbsp;输入正确</font>';
+		}
+	}
+	function checkpl1(){
+		start1=form1.start1.value;
+		arrive1=form1.arrive1.value;
+		if( start1.length <1 )
+		{
+			divpl1.innerHTML='<font class="color1" style="color:red;">*&nbsp;出发地点不能为空</font>';
+		}
+		if( arrive1.length <1 )
+		{
+			divpl1.innerHTML='<font class="color2"style="color:red;">*&nbsp;到达地点不能为空</font>';
+		}
+		if( (start1.length >=1) && (arrive1.length>=1))
+		{
+			divpl1.innerHTML='<font class="color2"style="color:green;">*&nbsp;输入正确</font>';
+		}
+	}
+	function checkpl11(){
+		start1=form1.start1.value;
+		arrive1=form1.arrive1.value;
+		if( arrive1.length <1 )
+		{
+			divpl1.innerHTML='<font class="color2"style="color:red;">*&nbsp;到达地点不能为空</font>';
+		}
+		if( start1.length <1 )
+		{
+			divpl1.innerHTML='<font class="color1" style="color:red;">*&nbsp;出发地点不能为空</font>';
+		}
+		if( (start1.length >=1) && (arrive1.length>=1))
+		{
+			divpl1.innerHTML='<font class="color2"style="color:green;">*&nbsp;输入正确</font>';
+		}
+	}
+	function checkpl2(){
+		start2=form1.start2.value;
+		arrive2=form1.arrive1.value;
+		if( start2.length <1 )
+		{
+			divpl2.innerHTML='<font class="color1" style="color:red;">*&nbsp;出发地点不能为空</font>';
+		}
+		if( arrive2.length <1 )
+		{
+			divpl2.innerHTML='<font class="color2"style="color:red;">*&nbsp;到达地点不能为空</font>';
+		}
+		if( (start2.length >=1) && (arrive2.length>=1))
+		{
+			divpl2.innerHTML='<font class="color2"style="color:green;">*&nbsp;输入正确</font>';
+		}
+	}
+	function checkpl21(){
+		start2=form1.start2.value;
+		arrive2=form1.arrive2.value;
+		if( arrive2.length <1 )
+		{
+			divpl2.innerHTML='<font class="color2"style="color:red;">*&nbsp;到达地点不能为空</font>';
+		}
+		if( start2.length <1 )
+		{
+			divpl2.innerHTML='<font class="color1" style="color:red;">*&nbsp;出发地点不能为空</font>';
+		}
+		if( (start2.length >=1) && (arrive2.length>=1))
+		{
+			divpl2.innerHTML='<font class="color2"style="color:green;">*&nbsp;输入正确</font>';
+		}
+	}
+	function checkpl3(){
+		start3=form1.start3.value;
+		arrive3=form1.arrive3.value;
+		if( start3.length <1 )
+		{
+			divpl3.innerHTML='<font class="color1" style="color:red;">*&nbsp;出发地点不能为空</font>';
+		}
+		if( arrive3.length <1 )
+		{
+			divpl3.innerHTML='<font class="color2"style="color:red;">*&nbsp;到达地点不能为空</font>';
+		}
+		if( (start3.length >=1) && (arrive3.length>=1))
+		{
+			divpl3.innerHTML='<font class="color2"style="color:green;">*&nbsp;输入正确</font>';
+		}
+	}
+	function checkpl31(){
+		start3=form1.start3.value;
+		arrive3=form1.arrive3.value;
+		if( arrive3.length <1 )
+		{
+			divpl3.innerHTML='<font class="color2"style="color:red;">*&nbsp;到达地点不能为空</font>';
+		}
+		if( start3.length <1 )
+		{
+			divpl3.innerHTML='<font class="color1" style="color:red;">*&nbsp;出发地点不能为空</font>';
+		}
+		if( (start3.length >=1) && (arrive3.length>=1))
+		{
+			divpl3.innerHTML='<font class="color2"style="color:green;">*&nbsp;输入正确</font>';
+		}
+	}
+	function checkpl4(){
+		start4=form1.start4.value;
+		arrive4=form1.arrive4.value;
+		if( start4.length <1 )
+		{
+			divpl4.innerHTML='<font class="color1" style="color:red;">*&nbsp;出发地点不能为空</font>';
+		}
+		if( arrive4.length <1 )
+		{
+			divpl4.innerHTML='<font class="color2"style="color:red;">*&nbsp;到达地点不能为空</font>';
+		}
+		if( (start4.length >=1) && (arrive4.length>=1))
+		{
+			divpl4.innerHTML='<font class="color2"style="color:green;">*&nbsp;输入正确</font>';
+		}
+	}
+	function checkpl41(){
+		start4=form1.start4.value;
+		arrive4=form1.arrive4.value;
+		if( arrive4.length <1 )
+		{
+			divpl4.innerHTML='<font class="color2"style="color:red;">*&nbsp;到达地点不能为空</font>';
+		}
+		if( start4.length <1 )
+		{
+			divpl4.innerHTML='<font class="color1" style="color:red;">*&nbsp;出发地点不能为空</font>';
+		}
+		if( (start4.length >=1) && (arrive4.length>=1))
+		{
+			divpl4.innerHTML='<font class="color2"style="color:green;">*&nbsp;输入正确</font>';
+		}
+	}
+	function checkpl5(){
+		start5=form1.start5.value;
+		arrive5=form1.arrive5.value;
+		if( start5.length <1 )
+		{
+			divpl5.innerHTML='<font class="color1" style="color:red;">*&nbsp;出发地点不能为空</font>';
+		}
+		if( arrive5.length <1 )
+		{
+			divpl5.innerHTML='<font class="color2"style="color:red;">*&nbsp;到达地点不能为空</font>';
+		}
+		if( (start5.length >=1) && (arrive5.length>=1))
+		{
+			divpl5.innerHTML='<font class="color2"style="color:green;">*&nbsp;输入正确</font>';
+		}
+	}
+	function checkpl51(){
+		start5=form1.start5.value;
+		arrive5=form1.arrive5.value;
+		if( arrive5.length <1 )
+		{
+			divpl5.innerHTML='<font class="color2"style="color:red;">*&nbsp;到达地点不能为空</font>';
+		}
+		if( start5.length <1 )
+		{
+			divpl5.innerHTML='<font class="color1" style="color:red;">*&nbsp;出发地点不能为空</font>';
+		}
+		if( (start5.length >=1) && (arrive5.length>=1))
+		{
+			divpl5.innerHTML='<font class="color2"style="color:green;">*&nbsp;输入正确</font>';
+		}
+	}
+	function checkpl6(){
+		start6=form1.start6.value;
+		arrive6=form1.arrive6.value;
+		if( start6.length <1 )
+		{
+			divpl6.innerHTML='<font class="color1" style="color:red;">*&nbsp;出发地点不能为空</font>';
+		}
+		if( arrive6.length <1 )
+		{
+			divpl6.innerHTML='<font class="color2"style="color:red;">*&nbsp;到达地点不能为空</font>';
+		}
+		if( (start6.length >=1) && (arrive6.length>=1))
+		{
+			divpl6.innerHTML='<font class="color2"style="color:green;">*&nbsp;输入正确</font>';
+		}
+	}
+	function checkpl61(){
+		start6=form1.start6.value;
+		arrive6=form1.arrive6.value;
+		if( arrive6.length <1 )
+		{
+			divpl6.innerHTML='<font class="color2"style="color:red;">*&nbsp;到达地点不能为空</font>';
+		}
+		if( start6.length <1 )
+		{
+			divpl6.innerHTML='<font class="color1" style="color:red;">*&nbsp;出发地点不能为空</font>';
+		}
+		if( (start6.length >=1) && (arrive6.length>=1))
+		{
+			divpl6.innerHTML='<font class="color2"style="color:green;">*&nbsp;输入正确</font>';
+		}
+	}
+	function checkpl7(){
+		start7=form1.start7.value;
+		arrive7=form1.arrive7.value;
+		if( start7.length <1 )
+		{
+			divpl7.innerHTML='<font class="color1" style="color:red;">*&nbsp;出发地点不能为空</font>';
+		}
+		if( arrive7.length <1 )
+		{
+			divpl7.innerHTML='<font class="color2"style="color:red;">*&nbsp;到达地点不能为空</font>';
+		}
+		if( (start7.length >=1) && (arrive7.length>=1))
+		{
+			divpl7.innerHTML='<font class="color2"style="color:green;">*&nbsp;输入正确</font>';
+		}
+	}
+	function checkpl71(){
+		start7=form1.start7.value;
+		arrive7=form1.arrive7.value;
+		if( arrive7.length <1 )
+		{
+			divpl7.innerHTML='<font class="color2"style="color:red;">*&nbsp;到达地点不能为空</font>';
+		}
+		if( start7.length <1 )
+		{
+			divpl7.innerHTML='<font class="color1" style="color:red;">*&nbsp;出发地点不能为空</font>';
+		}
+		if( (start7.length >=1) && (arrive7.length>=1))
+		{
+			divpl7.innerHTML='<font class="color2"style="color:green;">*&nbsp;输入正确</font>';
+		}
+	}
+	function checkpl8(){
+		start8=form1.start8.value;
+		arrive8=form1.arrive8.value;
+		if( start8.length <1 )
+		{
+			divpl8.innerHTML='<font class="color1" style="color:red;">*&nbsp;出发地点不能为空</font>';
+		}
+		if( arrive8.length <1 )
+		{
+			divpl8.innerHTML='<font class="color2"style="color:red;">*&nbsp;到达地点不能为空</font>';
+		}
+		if( (start8.length >=1) && (arrive8.length>=1))
+		{
+			divpl8.innerHTML='<font class="color2"style="color:green;">*&nbsp;输入正确</font>';
+		}
+	}
+	function checkpl81(){
+		start8=form1.start8.value;
+		arrive8=form1.arrive8.value;
+		if( arrive8.length <1 )
+		{
+			divpl8.innerHTML='<font class="color2"style="color:red;">*&nbsp;到达地点不能为空</font>';
+		}
+		if( start8.length <1 )
+		{
+			divpl8.innerHTML='<font class="color1" style="color:red;">*&nbsp;出发地点不能为空</font>';
+		}
+		if( (start8.length >=1) && (arrive8.length>=1))
+		{
+			divpl8.innerHTML='<font class="color2"style="color:green;">*&nbsp;输入正确</font>';
+		}
+	}
+	</script>
+<div id="wrapper960" class="clearfix">
+	<div id="header" class="clearfix shadow">
+		<div id="sitetitle" class="clearfix">
+			<h1><a href="index.html">Traffic Research</a></h1>
+		</div>
+
+		<div id="nav" class="clearfix">
+			<ul class="ziti">
+				<li><a href="fillAttention.html"target="_blank">FillAttention</a></li>
+				<li><a href="index.html">RETURN</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="slider-wrapper">
+		<div id="slider" class="nivoSlider">
+			<img src="images/1.jpg" alt="" />
+			<img src="images/2.jpg" alt="" />
+			<img src="images/3.jpg" alt="" />
+			<img src="images/4.jpg" alt="" />
+		</div>
+	</div>
+	<div id="content" class="clearfix shadow">
+		<h2 text-align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fill Out Personal Information</h2>
+	</div>
+	<form method="post" action="" name="form1">
+				<h4> 1.姓名：</h4> <input type="text" placeholder="请输入姓名" name="yourname"onblur="checkna()" maxlength="4" style="border-color: #006600; border-style: solid; border-width: 1px;text-align:center;">&nbsp;&nbsp;
+		<span class="tips" id="divname"></span>
+		<h4>2.本户地址</h4>
+		<input type="text" name="qu1"style="border-color: #006600; border-style: solid; border-width: 1px"onblur="checkfa1()"maxlength="8">区&nbsp;<b><input type="text" name="jie1"style="border-color: #006600; border-style: solid; border-width: 1px"onblur="checkfa2()"maxlength="12"></b>街(镇）&nbsp;<input type="text" name="she1"style="border-color: #006600; border-style: solid; border-width: 1px"maxlength="12">社区（居委会）&nbsp;&nbsp;<span class="tips" id="divfa"></span><br>
+		<br>其他地址:<input type="text" name="qu"style="border-color: #006600; border-style:solid; border-width: 1px"maxlength="25">
+		<h4>3.宿舍地址</h4>
+		<input type="text" name="qu2"style="border-color: #006600; border-style: solid; border-width: 1px"onblur="checkdo1()"maxlength="8">区&nbsp;<input type="text" name="jie2"style="border-color: #006600; border-style: solid; border-width: 1px"onblur="checkdo2()"maxlength="8">街（镇）&nbsp;<input type="text" name="name"style="border-color: #006600; border-style: solid; border-width: 1px"maxlength="8">路&nbsp;&nbsp;<span class="tips" id="divdo"></span><br><br>
+		其他地址: <input type="text" name="name"style="border-color: #006600; border-style:solid; border-width: 1px"maxlength="25">
+		<h4>4.年龄</h4>
+		<input type="text" name="agee"style="border-color: #006600; border-style: solid; border-width: 1px"size="6" maxlength="3"onblur="checkag()">周岁&nbsp;&nbsp;<span class="tips" id="divag"></span> <br>
+		<h4>5.户籍类型</h4>
+		<input type="radio" name="nong" value="农" /> 农业户口
+		<br />
+		<input type="radio" name="fei" value="非农" /> 非农业户口
+		<h4>6.本户户籍登记人口（单位：人）</h4>
+		<select name="sum" style="border-color: #006600; border-style:solid; border-width: 1px" onblur="checkcr1()">
+			<option value="volvo"></option>
+			<option value="volvo">1</option>
+			<option value="saab">2</option>
+			<option value="fiat">3</option>
+			<option value="audi">4</option>
+			<option value="volvo">5</option>
+			<option value="saab">6</option>
+			<option value="fiat">7</option>
+			<option value="audi">8</option>
+			<option value="volvo">9</option>
+			<option value="saab">10</option>
+			<option value="fiat">11</option>
+			<option value="audi">12</option>
+			<option value="volvo">13</option>
+			<option value="saab">14</option>
+			<option value="fiat">15</option>
+		</select>总数&nbsp;
+		<select name="notf" style="border-color: #006600; border-style:solid; border-width: 1px" onblur="checkcr2()">
+			<option value="volvo"></option>
+			<option value="volvo">1</option>
+			<option value="saab">2</option>
+			<option value="fiat">3</option>
+			<option value="audi">4</option>
+			<option value="volvo">5</option>
+			<option value="saab">6</option>
+			<option value="fiat">7</option>
+			<option value="audi">8</option>
+			<option value="volvo">9</option>
+			<option value="saab">10</option>
+			<option value="fiat">11</option>
+			<option value="audi">12</option>
+			<option value="volvo">13</option>
+			<option value="saab">14</option>
+			<option value="fiat">15</option>
+		</select>不满六周岁&nbsp;<span class="tips" id="divcr"></span> 
+		<h4>7.实际居住人口（单位：人）</h4>
+		<select name="su" style="border-color: #006600; border-style:solid; border-width: 1px" onblur="checkli1()">
+			<option value="volvo"></option>
+			<option value="volvo">1</option>
+			<option value="saab">2</option>
+			<option value="fiat">3</option>
+			<option value="audi">4</option>
+			<option value="volvo">5</option>
+			<option value="saab">6</option>
+			<option value="fiat">7</option>
+			<option value="audi">8</option>
+			<option value="volvo">9</option>
+			<option value="saab">10</option>
+			<option value="fiat">11</option>
+			<option value="audi">12</option>
+			<option value="volvo">13</option>
+			<option value="saab">14</option>
+			<option value="fiat">15</option>
+		</select>总数&nbsp;
+		<select name="notl" style="border-color: #006600; border-style:solid; border-width: 1px" onblur="checkli12()">
+			<option value="volvo"></option>
+			<option value="volvo">1</option>
+			<option value="saab">2</option>
+			<option value="fiat">3</option>
+			<option value="audi">4</option>
+			<option value="volvo">5</option>
+			<option value="saab">6</option>
+			<option value="fiat">7</option>
+			<option value="audi">8</option>
+			<option value="volvo">9</option>
+			<option value="saab">10</option>
+			<option value="fiat">11</option>
+			<option value="audi">12</option>
+			<option value="volvo">13</option>
+			<option value="saab">14</option>
+			<option value="fiat">15</option>
+		</select>不满六周岁&nbsp;<span class="tips" id="divli"></span> 
+		<h4>7.家庭成员组成</h4>
+		<img src="plus.jpg" width="20" height="20"style="position:absolute; " "onclick=" myFunction()" /><img src="plus.jpg" width="20" height="20"style="position:absolute; " onclick=" myFunction()"/><img src="plus.jpg" width="20" height="20"style="position:absolute; "onclick=" myFunction()" /><br><br>
+		<div id="1" >
+			成员一：<input type="text" name="unit1"style="border-color: #006600; border-style: solid; border-width: 1px;text-align:center;text-align:center;"onblur="checkun1()" placeholder="请输入家庭成员姓名" maxlength="4">与户主关系：
+			<select name="relation1" style="border-color: #006600; border-style:solid; border-width: 1px"onchange="checkun11()" ><option value="">请选择</option>
+				<option value="relationship-1">夫妻</option>
+				<option value="relationship-2">父母子女</option>
+				<option value="relationship-3">祖父母</option>
+				<option value="relationship-4">外祖父母</option>
+				<option value="relationship-5">兄弟姊妹</option>
+				<option value="relationship-6">外子女</option>
+				<option value="relationship-7">外孙子女</option>
+				<option value="relationship-8">其他</option>
+			</select><span class="tips" id="divun1"></span><br><br>
+		</div>
+		<div id="2" style="display:none;">
+			成员二：<input type="text" name="unit2"style="border-color: #006600; border-style: solid; border-width: 1px;text-align:center;"onblur="checkun2()"placeholder="请输入家庭成员姓名"maxlength="4">与户主关系：
+			<select name="relation2" style="border-color: #006600; border-style:solid; border-width: 1px" onchange="checkun21()" ><option value="">请选择</option>
+				<option value="relationship-1">夫妻</option>
+				<option value="relationship-2">父母子女</option>
+				<option value="relationship-3">祖父母</option>
+				<option value="relationship-4">外祖父母</option>
+				<option value="relationship-5">兄弟姊妹</option>
+				<option value="relationship-6">外子女</option>
+				<option value="relationship-7">外孙子女</option>
+				<option value="relationship-8">其他</option>
+			</select><span class="tips" id="divun2"></span><br><br>
+		</div>
+		<div id="3"style="display:none;" >
+			成员三：<input type="text" name="unit3"style="border-color: #006600; border-style: solid; border-width: 1px;text-align:center;"onblur="checkun3()"placeholder="请输入家庭成员姓名"maxlength="4">与户主关系：
+			<select name="relation3" style="border-color: #006600; border-style:solid; border-width: 1px" onchange="checkun31()" ><option value="">请选择</option>
+				<option value="relationship-1">夫妻</option>
+				<option value="relationship-2">父母子女</option>
+				<option value="relationship-3">祖父母</option>
+				<option value="relationship-4">外祖父母</option>
+				<option value="relationship-5">兄弟姊妹</option>
+				<option value="relationship-6">外子女</option>
+				<option value="relationship-7">外孙子女</option>
+				<option value="relationship-8">其他</option>
+			</select><span class="tips" id="divun3"></span><br><br>
+		</div>
+		<div id="4" style="display:none;">
+			成员四：<input type="text" name="unit4"style="border-color: #006600; border-style: solid; border-width: 1px;text-align:center;"onblur="checkun4()"placeholder="请输入家庭成员姓名"maxlength="4">与户主关系：
+			<select name="relation4" style="border-color: #006600; border-style:solid; border-width: 1px" onchange="checkun41()" ><option value="">请选择</option>
+				<option value="relationship-1">夫妻</option>
+				<option value="relationship-2">父母子女</option>
+				<option value="relationship-3">祖父母</option>
+				<option value="relationship-4">外祖父母</option>
+				<option value="relationship-5">兄弟姊妹</option>
+				<option value="relationship-6">外子女</option>
+				<option value="relationship-7">外孙子女</option>
+				<option value="relationship-8">其他</option>
+			</select><span class="tips" id="divun4"></span><br><br>
+		</div>
+		<div id="5" style="display:none;">
+			成员五：<input type="text" name="unit5"style="border-color: #006600; border-style: solid; border-width: 1px;text-align:center;"onblur="checkun5()"placeholder="请输入家庭成员姓名"maxlength="4">与户主关系：
+			<select name="relation5" style="border-color: #006600; border-style:solid; border-width: 1px"onchange="checkun51()"  ><option  value="">请选择</option>
+				<option value="relationship-1">夫妻</option>
+				<option value="relationship-2">父母子女</option>
+				<option value="relationship-3">祖父母</option>
+				<option value="relationship-4">外祖父母</option>
+				<option value="relationship-5">兄弟姊妹</option>
+				<option value="relationship-6">外子女</option>
+				<option value="relationship-7">外孙子女</option>
+				<option value="relationship-8">其他</option>
+			</select><span class="tips" id="divun5"></span><br><br>
+		</div>
+		<div id="6"style="display:none;" >
+			成员六：<input type="text" name="unit6"style="border-color: #006600; border-style: solid; border-width: 1px;text-align:center;"onblur="checkun6()"placeholder="请输入家庭成员姓名"maxlength="4">与户主关系：
+			<select name="relation6" style="border-color: #006600; border-style:solid; border-width: 1px" onchange="checkun61()" ><option value="">请选择</option>
+				<option value="relationship-1">夫妻</option>
+				<option value="relationship-2">父母子女</option>
+				<option value="relationship-3">祖父母</option>
+				<option value="relationship-4">外祖父母</option>
+				<option value="relationship-5">兄弟姊妹</option>
+				<option value="relationship-6">外子女</option>
+				<option value="relationship-7">外孙子女</option>
+				<option value="relationship-8">其他</option>
+			</select><span class="tips" id="divun6"></span>
+		</div>
+		<h4>8.个人出行记录</h4>
+		<img src="plus.jpg" width="20" height="20"style="position:absolute; "onclick=" my()" /><img src="plus.jpg" width="20" height="20"style="position:absolute;" onclick=" my()"/><img src="plus.jpg" width="20" height="20"style="position:absolute; "onclick=" my()" /><br><br>
+		<div id="21" style="display:block;">
+			第一次出行：
+			<select name="goal1" style="border-color: #006600; border-style:solid; border-width: 1px" onblur="checkvi11()"><option value="">请选择</option>
+				<option value="purpose-1">上班</option>
+				<option value="purpose-2">上学</option>
+				<option value="purpose-3">公务业务</option>
+				<option value="purpose-4">生活购物</option>
+				<option value="purpose-5">文娱体育</option>
+				<option value="purpose-6">探亲访友</option>
+				<option value="purpose-7">回家</option>
+				<option value="purpose-8">回程</option>
+				<option value="purpose-9">其他</option>
+			</select>
+			出行目的&nbsp;
+			<select name="way1" style="border-color: #006600; border-style:solid; border-width: 1px" onblur="checkvi12()"><option value="">请选择</option>
+				<option value="way-1">步行</option>
+				<option value="way-2">自行车</option>
+				<option value="way-3">摩托车</option>
+				<option value="way-4">私人小汽车</option>
+				<option value="way-5">公家小汽车</option>
+				<option value="way-6">公共汽车</option>
+				<option value="way-7">出租车</option>
+				<option value="way-8">地铁</option>
+				<option value="way-9">网络专车</option>
+				<option value="way-10">单位大客车</option>
+				<option value="way-11">物业巴士</option>
+				<option value="way-12">水巴/轮渡</option>
+				<option value="way-13">其他</option>
+			</select>
+			交通方式&nbsp;
+			<select name="stop1" style="border-color: #006600; border-style:solid; border-width: 1px" onblur="checkvi13()"><option value="">请选择</option>
+				<option value="park-1">路边停车</option>
+				<option value="park-2">公共停车场</option>
+				<option value="park-3">公共建筑配建停车场</option>
+				<option value="park-4">单位停车场</option>
+				<option value="park-5">工地停车场</option>
+				<option value="park-6">其他停车场</option>
+			</select>
+			停车方式&nbsp;<span class="tips" id="divvi1"></span><br>
+
+			<input placeholder="请输入日期" class="laydate-icon" style="border-color: #006600; border-style: solid; border-width: 1px" onClick="laydate({istime: true, format: 'YYYY-MM-DD hh:mm:ss'})">
+			出发时间&nbsp;<input placeholder="请输入日期" class="laydate-icon" style="border-color: #006600; border-style: solid; border-width: 1px" onClick="laydate({istime: true, format: 'YYYY-MM-DD hh:mm:ss'})">到达时间&nbsp;<br>
+			<input type="text" name="start1"style="border-color: #006600; border-style: solid; border-width: 1px;text-align:center"placeholder="请输入出发地点"onblur="checkpl1()">&nbsp;出发地&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="arrive1"style="border-color: #006600; border-style: solid; border-width: 1px;text-align:center"placeholder="请输入到达地点"onblur="checkpl11()">到达地&nbsp;
+			<span class="tips" id="divpl1"></span><br><br></div>
+
+		<div id="22" style="display:none;">
+			第二次出行：
+			<select name="goal2" style="border-color: #006600; border-style:solid; border-width: 1px" onblur="checkvi21()"><option value="">请选择</option>
+				<option value="purpose-1">上班</option>
+				<option value="purpose-2">上学</option>
+				<option value="purpose-3">公务业务</option>
+				<option value="purpose-4">生活购物</option>
+				<option value="purpose-5">文娱体育</option>
+				<option value="purpose-6">探亲访友</option>
+				<option value="purpose-7">回家</option>
+				<option value="purpose-8">回程</option>
+				<option value="purpose-9">其他</option>
+			</select>
+			出行目的&nbsp;
+			<select name="way2" style="border-color: #006600; border-style:solid; border-width: 1px"onblur="checkvi22()" ><option value="">请选择</option>
+				<option value="way-1">步行</option>
+				<option value="way-2">自行车</option>
+				<option value="way-3">摩托车</option>
+				<option value="way-4">私人小汽车</option>
+				<option value="way-5">公家小汽车</option>
+				<option value="way-6">公共汽车</option>
+				<option value="way-7">出租车</option>
+				<option value="way-8">地铁</option>
+				<option value="way-9">网络专车</option>
+				<option value="way-10">单位大客车</option>
+				<option value="way-11">物业巴士</option>
+				<option value="way-12">水巴/轮渡</option>
+				<option value="way-13">其他</option>
+			</select>
+			交通方式&nbsp;
+			<select name="stop2" style="border-color: #006600; border-style:solid; border-width: 1px" ><option value=""onblur="checkvi23()">请选择</option>
+				<option value="park-1">路边停车</option>
+				<option value="park-2">公共停车场</option>
+				<option value="park-3">公共建筑配建停车场</option>
+				<option value="park-4">单位停车场</option>
+				<option value="park-5">工地停车场</option>
+				<option value="park-6">其他停车场</option>
+			</select>
+			停车方式&nbsp;<span class="tips" id="divvi2"></span><br>
+
+			<input placeholder="请输入日期" class="laydate-icon" style="border-color: #006600; border-style: solid; border-width: 1px" onClick="laydate({istime: true, format: 'YYYY-MM-DD hh:mm:ss'})">
+			出发时间&nbsp;<input placeholder="请输入日期" class="laydate-icon" style="border-color: #006600; border-style: solid; border-width: 1px" onClick="laydate({istime: true, format: 'YYYY-MM-DD hh:mm:ss'})">到达时间&nbsp;<br>
+			<input type="text" name="start2"style="border-color: #006600; border-style: solid; border-width: 1px;text-align:center"placeholder="请输入出发地点"onblur="checkpl2()">&nbsp;出发地&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="arrive2"style="border-color: #006600; border-style: solid; border-width: 1px;text-align:center"placeholder="请输入到达地点"onblur="checkpl21()">到达地&nbsp;
+			<span class="tips" id="divpl2"></span><br><br></div>
+		<div id="23" style="display:none;">
+			第三次出行：
+			<select name="goal3" style="border-color: #006600; border-style:solid; border-width: 1px" onblur="checkvi31()"><option value="">请选择</option>
+				<option value="purpose-1">上班</option>
+				<option value="purpose-2">上学</option>
+				<option value="purpose-3">公务业务</option>
+				<option value="purpose-4">生活购物</option>
+				<option value="purpose-5">文娱体育</option>
+				<option value="purpose-6">探亲访友</option>
+				<option value="purpose-7">回家</option>
+				<option value="purpose-8">回程</option>
+				<option value="purpose-9">其他</option>
+			</select>
+			出行目的&nbsp;
+			<select  style="border-color: #006600; border-style:solid; border-width: 1px"name="way3" onblur="checkvi32()"><option value="">请选择</option>
+				<option value="way-1">步行</option>
+				<option value="way-2">自行车</option>
+				<option value="way-3">摩托车</option>
+				<option value="way-4">私人小汽车</option>
+				<option value="way-5">公家小汽车</option>
+				<option value="way-6">公共汽车</option>
+				<option value="way-7">出租车</option>
+				<option value="way-8">地铁</option>
+				<option value="way-9">网络专车</option>
+				<option value="way-10">单位大客车</option>
+				<option value="way-11">物业巴士</option>
+				<option value="way-12">水巴/轮渡</option>
+				<option value="way-13">其他</option>
+			</select>
+			交通方式&nbsp;
+			<select name="stop3" style="border-color: #006600; border-style:solid; border-width: 1px" onblur="checkvi33()"><option value="">请选择</option>
+				<option value="park-1">路边停车</option>
+				<option value="park-2">公共停车场</option>
+				<option value="park-3">公共建筑配建停车场</option>
+				<option value="park-4">单位停车场</option>
+				<option value="park-5">工地停车场</option>
+				<option value="park-6">其他停车场</option>
+			</select>
+			停车方式&nbsp;<span class="tips" id="divvi3"></span><br>
+
+			<input placeholder="请输入日期" class="laydate-icon" style="border-color: #006600; border-style: solid; border-width: 1px" onClick="laydate({istime: true, format: 'YYYY-MM-DD hh:mm:ss'})">
+			出发时间&nbsp;<input placeholder="请输入日期" class="laydate-icon" style="border-color: #006600; border-style: solid; border-width: 1px" onClick="laydate({istime: true, format: 'YYYY-MM-DD hh:mm:ss'})">到达时间&nbsp;<br>
+			<input type="text" name="start3"style="border-color: #006600; border-style: solid; border-width: 1px;text-align:center"placeholder="请输入出发地点"onblur="checkpl3()">&nbsp;出发地&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="arrive3"style="border-color: #006600; border-style: solid; border-width: 1px;text-align:center"placeholder="请输入到达地点"onblur="checkpl31()">到达地&nbsp;
+			<span class="tips" id="divpl3"></span><br><br></div>
+
+		<div id="24" style="display:none;">
+			第四次出行：
+			<select name="goal4" style="border-color: #006600; border-style:solid; border-width: 1px" onblur="checkvi41()"><option value="">请选择</option>
+				<option value="purpose-1">上班</option>
+				<option value="purpose-2">上学</option>
+				<option value="purpose-3">公务业务</option>
+				<option value="purpose-4">生活购物</option>
+				<option value="purpose-5">文娱体育</option>
+				<option value="purpose-6">探亲访友</option>
+				<option value="purpose-7">回家</option>
+				<option value="purpose-8">回程</option>
+				<option value="purpose-9">其他</option>
+			</select>
+			出行目的&nbsp;
+			<select name="way4" style="border-color: #006600; border-style:solid; border-width: 1px" onblur="checkvi42()"><option value="">请选择</option>
+				<option value="way-1">步行</option>
+				<option value="way-2">自行车</option>
+				<option value="way-3">摩托车</option>
+				<option value="way-4">私人小汽车</option>
+				<option value="way-5">公家小汽车</option>
+				<option value="way-6">公共汽车</option>
+				<option value="way-7">出租车</option>
+				<option value="way-8">地铁</option>
+				<option value="way-9">网络专车</option>
+				<option value="way-10">单位大客车</option>
+				<option value="way-11">物业巴士</option>
+				<option value="way-12">水巴/轮渡</option>
+				<option value="way-13">其他</option>
+			</select>
+			交通方式&nbsp;
+			<select name="stop4" style="border-color: #006600; border-style:solid; border-width: 1px" onblur="checkvi43()"><option value="">请选择</option>
+				<option value="park-1">路边停车</option>
+				<option value="park-2">公共停车场</option>
+				<option value="park-3">公共建筑配建停车场</option>
+				<option value="park-4">单位停车场</option>
+				<option value="park-5">工地停车场</option>
+				<option value="park-6">其他停车场</option>
+			</select>
+			停车方式&nbsp;<span class="tips" id="divvi4"></span><br>
+
+			<input placeholder="请输入日期" class="laydate-icon" style="border-color: #006600; border-style: solid; border-width: 1px" onClick="laydate({istime: true, format: 'YYYY-MM-DD hh:mm:ss'})">
+			出发时间&nbsp;<input placeholder="请输入日期" class="laydate-icon" style="border-color: #006600; border-style: solid; border-width: 1px" onClick="laydate({istime: true, format: 'YYYY-MM-DD hh:mm:ss'})">到达时间&nbsp;<br>
+			<input type="text" name="start4"style="border-color: #006600; border-style: solid; border-width: 1px;text-align:center"placeholder="请输入出发地点"onblur="checkpl4()">&nbsp;出发地&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="arrive4"style="border-color: #006600; border-style: solid; border-width: 1px;text-align:center"placeholder="请输入到达地点"onblur="checkpl41()">到达地&nbsp;
+			<span class="tips" id="divpl4"></span><br><br></div>
+
+		<div id="25" style="display:none;">
+		第五次出行：
+		<select name="goal5" style="border-color: #006600; border-style:solid; border-width: 1px"onblur="checkvi51()" ><option value="">请选择</option>
+			<option value="purpose-1">上班</option>
+			<option value="purpose-2">上学</option>
+			<option value="purpose-3">公务业务</option>
+			<option value="purpose-4">生活购物</option>
+			<option value="purpose-5">文娱体育</option>
+			<option value="purpose-6">探亲访友</option>
+			<option value="purpose-7">回家</option>
+			<option value="purpose-8">回程</option>
+			<option value="purpose-9">其他</option>
+		</select>
+		出行目的&nbsp;
+		<select name="way5" style="border-color: #006600; border-style:solid; border-width: 1px"onblur="checkvi52()" ><option value="">请选择</option>
+			<option value="way-1">步行</option>
+			<option value="way-2">自行车</option>
+			<option value="way-3">摩托车</option>
+			<option value="way-4">私人小汽车</option>
+			<option value="way-5">公家小汽车</option>
+			<option value="way-6">公共汽车</option>
+			<option value="way-7">出租车</option>
+			<option value="way-8">地铁</option>
+			<option value="way-9">网络专车</option>
+			<option value="way-10">单位大客车</option>
+			<option value="way-11">物业巴士</option>
+			<option value="way-12">水巴/轮渡</option>
+			<option value="way-13">其他</option>
+		</select>
+		交通方式&nbsp;
+		<select name="stop5" style="border-color: #006600; border-style:solid; border-width: 1px" onblur="checkvi53()"><option value="">请选择</option>
+			<option value="park-1">路边停车</option>
+			<option value="park-2">公共停车场</option>
+			<option value="park-3">公共建筑配建停车场</option>
+			<option value="park-4">单位停车场</option>
+			<option value="park-5">工地停车场</option>
+			<option value="park-6">其他停车场</option>
+		</select>
+		停车方式&nbsp;<span class="tips" id="divvi5"></span><br>
+			<input placeholder="请输入日期" class="laydate-icon" style="border-color: #006600; border-style: solid; border-width: 1px" onClick="laydate({istime: true, format: 'YYYY-MM-DD hh:mm:ss'})">
+			出发时间&nbsp;<input placeholder="请输入日期" class="laydate-icon" style="border-color: #006600; border-style: solid; border-width: 1px" onClick="laydate({istime: true, format: 'YYYY-MM-DD hh:mm:ss'})">到达时间&nbsp;<br>
+			<input type="text" name="start5"style="border-color: #006600; border-style: solid; border-width: 1px;text-align:center"placeholder="请输入出发地点"onblur="checkpl5()">&nbsp;出发地&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="arrive5"style="border-color: #006600; border-style: solid; border-width: 1px;text-align:center"placeholder="请输入到达地点"onblur="checkpl51()">到达地&nbsp;
+			<span class="tips" id="divpl5"></span><br><br></div>
+
+		<div id="26" style="display:none;">
+			第六次出行：
+			<select name="goal6" style="border-color: #006600; border-style:solid; border-width: 1px"onblur="checkvi61()" ><option value="">请选择</option>
+				<option value="purpose-1">上班</option>
+				<option value="purpose-2">上学</option>
+				<option value="purpose-3">公务业务</option>
+				<option value="purpose-4">生活购物</option>
+				<option value="purpose-5">文娱体育</option>
+				<option value="purpose-6">探亲访友</option>
+				<option value="purpose-7">回家</option>
+				<option value="purpose-8">回程</option>
+				<option value="purpose-9">其他</option>
+			</select>
+			出行目的&nbsp;
+			<select name="way6" style="border-color: #006600; border-style:solid; border-width: 1px"onblur="checkvi62()" ><option value="">请选择</option>
+				<option value="way-1">步行</option>
+				<option value="way-2">自行车</option>
+				<option value="way-3">摩托车</option>
+				<option value="way-4">私人小汽车</option>
+				<option value="way-5">公家小汽车</option>
+				<option value="way-6">公共汽车</option>
+				<option value="way-7">出租车</option>
+				<option value="way-8">地铁</option>
+				<option value="way-9">网络专车</option>
+				<option value="way-10">单位大客车</option>
+				<option value="way-11">物业巴士</option>
+				<option value="way-12">水巴/轮渡</option>
+				<option value="way-13">其他</option>
+			</select>
+			交通方式&nbsp;
+			<select name="stop6" style="border-color: #006600; border-style:solid; border-width: 1px"onblur="checkvi63()" ><option value="">请选择</option>
+				<option value="park-1">路边停车</option>
+				<option value="park-2">公共停车场</option>
+				<option value="park-3">公共建筑配建停车场</option>
+				<option value="park-4">单位停车场</option>
+				<option value="park-5">工地停车场</option>
+				<option value="park-6">其他停车场</option>
+			</select>
+			停车方式&nbsp;<span class="tips" id="divvi6"></span><br>
+
+			<input placeholder="请输入日期" class="laydate-icon" style="border-color: #006600; border-style: solid; border-width: 1px" onClick="laydate({istime: true, format: 'YYYY-MM-DD hh:mm:ss'})">
+			出发时间&nbsp;<input placeholder="请输入日期" class="laydate-icon" style="border-color: #006600; border-style: solid; border-width: 1px" onClick="laydate({istime: true, format: 'YYYY-MM-DD hh:mm:ss'})">到达时间&nbsp;<br>
+			<input type="text" name="start6"style="border-color: #006600; border-style: solid; border-width: 1px;text-align:center"placeholder="请输入出发地点"onblur="checkpl6()">&nbsp;出发地&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="arrive6"style="border-color: #006600; border-style: solid; border-width: 1px;text-align:center"placeholder="请输入到达地点"onblur="checkpl61()">到达地&nbsp;
+			<span class="tips" id="divpl6"></span><br><br></div>
+
+		<div id="27" style="display:none;">
+			第七次出行：
+			<select name="goal7" style="border-color: #006600; border-style:solid; border-width: 1px"onblur="checkvi71()" ><option value="">请选择</option>
+				<option value="purpose-1">上班</option>
+				<option value="purpose-2">上学</option>
+				<option value="purpose-3">公务业务</option>
+				<option value="purpose-4">生活购物</option>
+				<option value="purpose-5">文娱体育</option>
+				<option value="purpose-6">探亲访友</option>
+				<option value="purpose-7">回家</option>
+				<option value="purpose-8">回程</option>
+				<option value="purpose-9">其他</option>
+			</select>
+			出行目的&nbsp;
+			<select name="way7" style="border-color: #006600; border-style:solid; border-width: 1px" onblur="checkvi72()"><option value="">请选择</option>
+				<option value="way-1">步行</option>
+				<option value="way-2">自行车</option>
+				<option value="way-3">摩托车</option>
+				<option value="way-4">私人小汽车</option>
+				<option value="way-5">公家小汽车</option>
+				<option value="way-6">公共汽车</option>
+				<option value="way-7">出租车</option>
+				<option value="way-8">地铁</option>
+				<option value="way-9">网络专车</option>
+				<option value="way-10">单位大客车</option>
+				<option value="way-11">物业巴士</option>
+				<option value="way-12">水巴/轮渡</option>
+				<option value="way-13">其他</option>
+			</select>
+			交通方式&nbsp;
+			<select name="stop7" style="border-color: #006600; border-style:solid; border-width: 1px" onblur="checkvi73()"><option value="">请选择</option>
+				<option value="park-1">路边停车</option>
+				<option value="park-2">公共停车场</option>
+				<option value="park-3">公共建筑配建停车场</option>
+				<option value="park-4">单位停车场</option>
+				<option value="park-5">工地停车场</option>
+				<option value="park-6">其他停车场</option>
+			</select>
+			停车方式&nbsp;<span class="tips" id="divvi7"></span><br>
+
+			<input placeholder="请输入日期" class="laydate-icon" style="border-color: #006600; border-style: solid; border-width: 1px" onClick="laydate({istime: true, format: 'YYYY-MM-DD hh:mm:ss'})">
+			出发时间&nbsp;<input placeholder="请输入日期" class="laydate-icon" style="border-color: #006600; border-style: solid; border-width: 1px" onClick="laydate({istime: true, format: 'YYYY-MM-DD hh:mm:ss'})">到达时间&nbsp;<br>
+			<input type="text" name="start7"style="border-color: #006600; border-style: solid; border-width: 1px;text-align:center"placeholder="请输入出发地点"onblur="checkpl7()">&nbsp;出发地&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="arrive7"style="border-color: #006600; border-style: solid; border-width: 1px;text-align:center"placeholder="请输入到达地点"onblur="checkpl71()">到达地&nbsp;
+			<span class="tips" id="divpl7"></span><br><br></div>
+
+		<div id="28" style="display:none;">
+			第八次出行：
+			<select name="goal8" style="border-color: #006600; border-style:solid; border-width: 1px" onblur="checkvi81()"><option value="">请选择</option>
+				<option value="purpose-1">上班</option>
+				<option value="purpose-2">上学</option>
+				<option value="purpose-3">公务业务</option>
+				<option value="purpose-4">生活购物</option>
+				<option value="purpose-5">文娱体育</option>
+				<option value="purpose-6">探亲访友</option>
+				<option value="purpose-7">回家</option>
+				<option value="purpose-8">回程</option>
+				<option value="purpose-9">其他</option>
+			</select>
+			出行目的&nbsp;
+			<select name="way8" style="border-color: #006600; border-style:solid; border-width: 1px"onblur="checkvi82()" ><option value="">请选择</option>
+				<option value="way-1">步行</option>
+				<option value="way-2">自行车</option>
+				<option value="way-3">摩托车</option>
+				<option value="way-4">私人小汽车</option>
+				<option value="way-5">公家小汽车</option>
+				<option value="way-6">公共汽车</option>
+				<option value="way-7">出租车</option>
+				<option value="way-8">地铁</option>
+				<option value="way-9">网络专车</option>
+				<option value="way-10">单位大客车</option>
+				<option value="way-11">物业巴士</option>
+				<option value="way-12">水巴/轮渡</option>
+				<option value="way-13">其他</option>
+			</select>
+			交通方式&nbsp;
+			<select name="stop8" style="border-color: #006600; border-style:solid; border-width: 1px" onblur="checkvi83()"><option value="">请选择</option>
+				<option value="park-1">路边停车</option>
+				<option value="park-2">公共停车场</option>
+				<option value="park-3">公共建筑配建停车场</option>
+				<option value="park-4">单位停车场</option>
+				<option value="park-5">工地停车场</option>
+				<option value="park-6">其他停车场</option>
+			</select>
+			停车方式&nbsp;<span class="tips" id="divvi8"></span><br>
+			<input placeholder="请输入日期" class="laydate-icon" style="border-color: #006600; border-style: solid; border-width: 1px" onClick="laydate({istime: true, format: 'YYYY-MM-DD hh:mm:ss'})">出发时间&nbsp;<input placeholder="请输入日期" class="laydate-icon" style="border-color: #006600; border-style: solid; border-width: 1px" onClick="laydate({istime: true, format: 'YYYY-MM-DD hh:mm:ss'})">到达时间&nbsp;<br>
+			<input type="text" name="start8"style="border-color: #006600; border-style: solid; border-width: 1px;text-align:center"placeholder="请输入出发地点"onblur="checkpl8()">&nbsp;出发地&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="arrive8"style="border-color: #006600; border-style: solid; border-width: 1px;text-align:center"placeholder="请输入到达地点"onblur="checkpl81()">到达地&nbsp;
+			<span class="tips" id="divpl8"></span>
+		</div>
+		<h4> 9.您对城市交通（道路公交、地铁、停车设施及过街设施）的建议（选填）</h4>
+	<textarea rows="3" cols="25" name="advice"style="border-color: #006600; border-style: solid;width: 200px;height: 60px; border-width: 1px" placeholder="填写建议">
+			</textarea>
+	</form>
+
+	<br><br><br><br>
+	<a href="index.html" ><input type="submit" value="提交"  style="width:80px;height:40px;margin-left:400px;font-family:黑体；" ></a>
+	<div id="footer" class="shadow">
+		<p>&copy; 2016  | design by <a href="http://weibo.com/5769582634/profile?topnav=1&wvr=6&is_all=1"> Hopefil</a> <br />More help <a href="http://weibo.com/5769582634/profile?topnav=1&wvr=6&is_all=1">ME</a></p>
+	</div>
+</div>
+<script type="text/javascript">
+	$(window).load(function() {
+		$('#slider').nivoSlider();
+	});
+</script>
+<script type="text/javascript">
+	!function(){
+		laydate.skin('molv');//切换皮肤，请查看skins下面皮肤库
+		laydate({elem: '#demo'});//绑定元素
+	}();
+
+	//日期范围限制
+	var start = {
+		elem: '#start',
+		format: 'YYYY-MM-DD',
+		min: laydate.now(), //设定最小日期为当前日期
+		max: '2099-06-16', //最大日期
+		istime: true,
+		istoday: false,
+		choose: function(datas){
+			end.min = datas; //开始日选好后，重置结束日的最小日期
+			end.start = datas //将结束日的初始值设定为开始日
+		}
+	};
+
+	var end = {
+		elem: '#end',
+		format: 'YYYY-MM-DD',
+		min: laydate.now(),
+		max: '2099-06-16',
+		istime: true,
+		istoday: false,
+		choose: function(datas){
+			start.max = datas; //结束日选好后，充值开始日的最大日期
+		}
+	};
+	laydate(start);
+	laydate(end);
+
+	//自定义日期格式
+	laydate({
+		elem: '#test1',
+		format: 'YYYY年MM月DD日',
+		festival: true, //显示节日
+		choose: function(datas){ //选择日期完毕的回调
+			alert('得到：'+datas);
+		}
+	});
+
+	//日期范围限定在昨天到明天
+	laydate({
+		elem: '#hello3',
+		min: laydate.now(-1), //-1代表昨天，-2代表前天，以此类推
+		max: laydate.now(+1) //+1代表明天，+2代表后天，以此类推
+	});
+</script>
+</body>
+</html>

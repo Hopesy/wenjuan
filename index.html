@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="shortcut icon" href="tubiao2.ico">
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="description" content="Your description goes here" />
+	<meta name="keywords" content="your,keywords,goes,here" />
+	<meta name="author" content="Your Name" />
+	<link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz|Droid+Sans|Princess+Sofia' rel='stylesheet' type='text/css' />
+	<link rel="stylesheet" type="text/css" media="all" href="inland-hembygd.css" />
+	<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery.nivo.slider.js"></script>
+	<title>Traffic Research</title>
+	<script type="text/javascript">
+		function startTime()
+		{
+			var today=new Date()
+			var h=today.getHours()
+			var m=today.getMinutes()
+			var s=today.getSeconds()
+// add a zero in front of numbers<10
+			m=checkTime(m)
+			s=checkTime(s)
+			document.getElementById('txt').innerHTML=h+":"+m+":"+s
+			t=setTimeout('startTime()',500)
+		}
+
+		function checkTime(i)
+		{
+			if (i<10)
+			{i="0" + i}
+			return i
+		}
+	</script>
+</head>
+<body onload="startTime()" background="background-1.jpg">
+
+<div id="wrapper960"  class="clearfix">
+	<div id="toplinks">
+	</div>
+
+	<div id="header" class="clearfix shadow">
+		<div id="sitetitle" class="clearfix">
+			<h1><a href="index.html">Traffic</a></h1>
+		</div>
+
+		<div id="nav" class="clearfix">
+			<ul>
+				<li><a class="current" href="index.html">OD ADDRESS</a></li>
+				<li><a href="#research">FILL MESSAGE</a></li>
+				<li><a href="index-4.html">ABOUT US</a></li>
+				<li><a href="contact-form.html"; target="_blank">CONTACT US</a></li>
+				<li size="5"><a href="login.html"; target="_blank"><strong></strong>LOGIN</strong></a></li>
+			</ul>
+		</div>
+	</div>
+<p align="right" id="txt" padding-right:20px;>TIME</p>
+	<div class="slider-wrapper">
+		<div id="slider" class="nivoSlider">
+			<img src="images/slider0.jpg" alt="广州大学" />
+			<img src="images/slider1.jpg" alt="中心湖" />
+			<img src="images/slider2.jpg" alt="钟楼" />
+			<img src="images/slider3.jpg" alt="图书馆" />
+			<img src="images/slider4.jpg" alt="体育馆" />
+		</div>
+	</div>
+	<div class="inner_copyright">Collect from <a href="http://www.cssmoban.com/" target="_blank" title="H"opefil>Hopefil</a></div>
+	<div id="content" class="clearfix shadow">
+		<h2>About research</h2>
+		<p>尊敬的市民，感谢您参加本次本次调查,请您按照以下要求填写调查问卷，谢谢配合!</p>
+		<ul>
+			<li><B>首先：</B>根据职业和居住方式填写个人信息</li>
+			<li><B>其次：</B>按照要求填写调查问卷</li>
+		</ul>
+	</div>
+<h3 align="center" id="research">个人信息填写</h3>
+	<div id="extended" class="clearfix shadow">
+		<div id="trio1">
+			<div class="inner">
+				<ul>
+				<li><h3><a href="index-1.html">工厂集体</a></h3></li>
+				</ul>
+				<p>如果您是广州市本地住户，请点击此链接</p>
+			</div>
+		</div>
+
+		<div id="trio2">
+			<div class="inner">
+				<ul>
+					<li><h3><a href="index-2.html">学校集体</a></h3></li>
+				</ul>
+				<p>如果你是学校集体居住请点击此链接</p>
+			</div>
+		</div>
+
+		<div id="trio3">
+			<div class="inner">
+				<ul>
+					<li><h3><a href="index-3.html">住户专用</a></h3></li>
+				</ul>
+				<p>如果您是工厂集体专用请点击此链接</p>
+			</div>
+		</div>
+	</div>
+<h3 align="center"><a href="toup.html" target="_blank">问卷填写</a></h3>
+	<div id="footer" class="shadow">
+		<p>&copy; 2016 Your Name | <a href="http://www.cssmoban.com/templates/inland-hembygd/">Research design</a> by <a href="http://www.cssmoban.com/">Hopefil</a> <br />More help <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">ME</a></p>
+	</div>
+</div>
+
+<script type="text/javascript">
+	$(window).load(function() {
+		$('#slider').nivoSlider();
+	});
+</script>
+</body>
+</html>
